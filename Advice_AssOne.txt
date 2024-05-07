@@ -1,0 +1,27 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class Advice{
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        Random random = new Random();
+        boolean flag = true;
+        do{
+            System.out.println("Ask your question :");
+            scan.nextLine();
+            int choice = random.nextInt(4);
+            switch(choice){
+                case 0 : System.out.println("Answer 0"); break;
+                case 1 : System.out.println("Answer 1"); break;
+                case 2 : System.out.println("Answer 2"); break;
+                case 3 : System.out.println("Answer 3"); break;
+            }
+            System.out.println("Do you want ask another question? Reply with Yes or No");
+            String response = scan.nextLine();
+            if(response.equalsIgnoreCase("NO")){
+                flag = false;
+                System.out.println("Thanks for using our services.");
+            }
+        }while(flag);
+    }
+}
