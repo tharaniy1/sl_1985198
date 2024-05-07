@@ -1,0 +1,47 @@
+class Employee{
+    private double salary;
+    private int hours;
+    
+    public Employee(){
+        this(1500,6);
+    }
+    public Employee(double salary, int hours){
+        this.salary = salary;
+        this.hours = hours;
+    }
+    
+    public void getInfo(){
+        System.out.println("Salary of the employee :"+salary);
+        System.out.println("Number of hours worked :"+hours);
+    }
+    
+    private double addSal(){
+        if(salary < 1500){
+            return  1000;
+        }
+        return 0;
+    }
+    
+    private double addWork(){
+        if(hours > 6){
+            return  500;
+        }
+        return 0;
+    }
+    
+    public void finalSalary(){
+        System.out.println("Final Salary of the employee is "+(salary+addSal()+addWork()));
+    }
+}
+
+public class MyClass{
+    public static void main(String[] args){
+        Employee emp1 = new Employee();
+        emp1.getInfo();
+        emp1.finalSalary();
+        
+        Employee emp2 = new Employee(1400,8);
+        emp2.getInfo();
+        emp2.finalSalary();
+    }
+}
