@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class MyClass{
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the number from where you need to start :");
+        int start = scan.nextInt();
+        System.out.println("Enter the number where you want to stop :");
+        int end = scan.nextInt();
+        System.out.print("The numbers from "+start+" to "+end+" :");
+        while(start <= end){
+            System.out.print(start+" ");
+            start++;
+        }
+        
+    }
+}
