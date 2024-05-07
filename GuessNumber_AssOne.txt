@@ -1,0 +1,27 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class GuessNumber{
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the number range from which you want guess : ");
+        int end = scan.nextInt();
+        Random random = new Random();
+        int number = random.nextInt(end+1);
+        int chances = 10;
+        while(chances > 0){
+            System.out.println("Guess the number from range 0 to "+end+" :");
+            int guessNumber = scan.nextInt();
+            if(guessNumber == number){
+                System.out.println("Congraluations ! You guessed right");
+                break;
+            }else{
+                System.out.println("OOPS! You guessed wrong number. The guessNumber is "+ ((guessNumber > number)? "greater than":"less than")+" the number");
+                chances--;
+            }
+            if(chances == 0){
+                System.out.println("Sorry, the chances are completed");
+            }
+        }
+    }
+}
