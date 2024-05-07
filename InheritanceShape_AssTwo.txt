@@ -1,0 +1,39 @@
+class Shape{
+    public double getArea(){
+        return 0;
+    }
+}
+
+class Rectangle extends Shape{
+    private double length;
+    private double width;
+    public Rectangle(double l, double w){
+        if(l > 0 && w > 0){
+            length = l;
+            width = w;
+        }
+        
+    }
+    
+    public double getArea(){
+        return length * width;
+    }
+}
+
+public class Main{
+    public static void main(String[] args){
+        Rectangle rectangle = new Rectangle(10,5);
+        System.out.println("Rectangle area is :"+rectangle.getArea());
+        
+        Shape shape1 = new Shape();
+        System.out.println("Shape1 area is :"+shape1.getArea());
+        
+        Shape shape2 = new Rectangle(0,0);
+        System.out.println("Shape2 area is :"+shape2.getArea());
+        
+        Shape shape3 = new Rectangle(6,3);
+        System.out.println("Shape3 area is :"+shape3.getArea());
+        
+    }
+    
+}
