@@ -1,0 +1,66 @@
+class Triangle{
+    double sideA;
+    double sideB;
+    double sideC;
+    
+    //constructors
+    public Triangle(){
+        this(2,6,7);
+    }
+    
+    public Triangle(double a, double b, double c){
+        if(a > 0 && b > 0 && c > 0){
+            setSideA(a);
+            setSideB(b);
+            setSideC(c);
+        }
+    }
+    
+    //setters
+    public void setSideA(double a){
+        sideA = a;
+    }
+    
+    public void setSideB(double b){
+        sideB = b;
+    }
+    
+    public void setSideC(double c){
+        sideC = c;
+    }
+    
+    //getters
+    public double getSideA(){
+        return sideA;
+    }
+    public double getSideB(){
+        return sideB;
+    }
+    public double getSideC(){
+        return sideC;
+    }
+    
+    public void areaOfTriangle(){
+        double s = perimeterOfTriangle()/2;
+        double area = 0;
+        area = Math.sqrt(s*(s-sideA)*(s-sideB)*(s-sideC));
+        System.out.format("Area of the triangle : %.2f%n",area);
+    }
+    
+    public double perimeterOfTriangle(){
+        double perimeter = sideA+sideB+sideC;
+        return perimeter;
+    }
+    
+}
+
+public class Test{
+    public static void main(String[] args){
+        Triangle obj1 = new Triangle();
+        obj1.areaOfTriangle();
+        System.out.println("Perimeter of the triangle : "+obj1.perimeterOfTriangle());
+        Triangle obj2 = new Triangle(7,6,5);
+        obj2.areaOfTriangle();
+        System.out.println("Perimeter of the triangle : "+obj2.perimeterOfTriangle());
+    }
+}
