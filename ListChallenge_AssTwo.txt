@@ -1,0 +1,25 @@
+import java.util.List;
+import java.util.ArrayList;
+
+public class ListChallenge{
+    public static void main(String[] args){
+        ArrayList<String> ls = new ArrayList<>();
+        ls.add(" Mango ");
+        ls.add(" Apple ");
+        ls.add(" Guava ");
+        ls.add(" Orange  ");
+        ls.add(" Grapes ");
+        removeSpaces(ls);
+        System.out.println(ls);
+    }
+    
+    public static void removeSpaces(ArrayList<String> list){
+        int i = 0;
+        for(String element: list){
+            element = element.trim();
+            list.set(i,element);
+            i++;
+        }
+        
+    }
+}
